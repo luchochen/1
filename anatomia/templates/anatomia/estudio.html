@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio | Anatomía y Odontología</title>
+    <link rel="stylesheet" href="{% static 'anatomia/css/estudio.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-badge">A</div>
+            <div>
+                <h1>Atlas Anatómico Odontológico</h1>
+                <p>Demo interactiva de estudio clínico</p>
+            </div>
+        </div>
+
+        <nav class="mode-tabs">
+            <a href="/" class="mode-btn home-btn">Inicio</a>
+            <button class="mode-btn active" type="button" data-mode="atlas">Atlas 2D</button>
+            <button class="mode-btn" type="button" data-mode="craneo">Cráneo 3D</button>
+            <button class="mode-btn" type="button" data-mode="boca">Boca 3D</button>
+            <button class="mode-btn" type="button" data-mode="examen">Modo examen</button>
+        </nav>
+    </header>
+
+    <main class="study-layout">
+        <section class="viewer-card">
+            <div class="mode-panel active" id="panel-atlas">
+                <div class="section-header">
+                    <div>
+                        <h2>Mapa dental interactivo</h2>
+                        <p>Seleccioná un diente para ver su información anatómica</p>
+                    </div>
+
+                    <div class="legend">
+                        <span><i class="legend-dot superior"></i> Arcada superior</span>
+                        <span><i class="legend-dot inferior"></i> Arcada inferior</span>
+                    </div>
+                </div>
+
+                <div class="odontograma-wrapper">
+                    <div id="odontograma" class="odontograma">
+                        <div class="arcada-label">Arcada superior</div>
+                        <div class="teeth-row top-row" id="top-row"></div>
+
+                        <div class="midline">
+                            <span>Línea media</span>
+                        </div>
+
+                        <div class="arcada-label">Arcada inferior</div>
+                        <div class="teeth-row bottom-row" id="bottom-row"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mode-panel" id="panel-craneo">
+                <div class="section-header">
+                    <div>
+                        <h2>Cráneo 3D</h2>
+                        <p>Modelo anatómico interactivo embebido desde Sketchfab</p>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <iframe
+                        title="Craneo 3D"
+                        width="100%"
+                        height="620"
+                        frameborder="0"
+                        allowfullscreen
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        xr-spatial-tracking
+                        execution-while-out-of-viewport
+                        execution-while-not-rendered
+                        web-share
+                        src="https://sketchfab.com/models/252887e2e755427c90d9e3d0c6d3025f/embed">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="mode-panel" id="panel-boca">
+                <div class="section-header">
+                    <div>
+                        <h2>Boca 3D</h2>
+                        <p>Modelo 3D para exploración anatómica de cavidad oral</p>
+                    </div>
+                </div>
+
+                <div class="model-card">
+                    <iframe
+                        title="Boca 3D"
+                        width="100%"
+                        height="620"
+                        frameborder="0"
+                        allowfullscreen
+                        mozallowfullscreen="true"
+                        webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        xr-spatial-tracking
+                        execution-while-out-of-viewport
+                        execution-while-not-rendered
+                        web-share
+                        src="https://sketchfab.com/models/d92cfd5873ac43299c7b64cdf9725526/embed">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="mode-panel" id="panel-examen">
+                <div class="section-header">
+                    <div>
+                        <h2>Modo examen</h2>
+                        <p>Identificá la pieza dental correcta según la consigna</p>
+                    </div>
+                </div>
+
+                <div class="exam-card">
+                    <div class="exam-question-box">
+                        <span class="exam-label">Pregunta actual</span>
+                        <h3 id="exam-question">Presioná "Nueva pregunta" para comenzar</h3>
+                    </div>
+
+                    <div class="exam-actions">
+                        <button type="button" class="action-btn primary" id="new-question-btn">Nueva pregunta</button>
+                        <button type="button" class="action-btn" id="show-answer-btn">Mostrar respuesta</button>
+                    </div>
+
+                    <div class="exam-answer" id="exam-answer">
+                        La respuesta aparecerá acá.
+                    </div>
+
+                    <div class="exam-help">
+                        <p>
+                            Sugerencia: usá el modo Atlas 2D para estudiar la numeración FDI y después volvé al examen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="info-card">
+            <div class="info-header">
+                <h3 id="info-title">Información del diente</h3>
+                <p id="info-subtitle">Panel anatómico descriptivo</p>
+            </div>
+
+            <div id="info-panel" class="info-panel empty">
+                <div class="empty-state">
+                    <div class="empty-icon">🦷</div>
+                    <h4>Seleccioná una pieza dental</h4>
+                    <p>
+                        Hacé clic sobre cualquier diente del mapa para ver
+                        numeración FDI, nombre, cuadrante, arcada y función.
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <section class="extra-section">
+        <div class="extra-card">
+            <h3>Base para las próximas mejoras</h3>
+            <p>
+                Ahora los modos ya funcionan dentro de la misma pantalla. El siguiente paso fuerte sería sincronizar el odontograma con la boca 3D y después agregar progreso del estudiante y lecciones por grupos dentales.
+            </p>
+        </div>
+    </section>
+
+    <div id="tooltip" class="tooth-tooltip"></div>
+
+    <script src="{% static 'anatomia/js/estudio.js' %}"></script>
+</body>
+</html>

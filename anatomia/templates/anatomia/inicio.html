@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Atlas Anatómico Odontológico</title>
+    <link rel="stylesheet" href="{% static 'anatomia/css/inicio.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-badge">A</div>
+            <div>
+                <h1>Atlas Anatómico Estético</h1>
+                <p>Demo profesional para estudio anatómico facial y odontológico</p>
+            </div>
+        </div>
+
+        <nav class="top-actions">
+            <a href="/" class="nav-btn active">Inicio</a>
+            <a href="/estudio/" class="nav-btn">Módulo de estudio</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <section class="hero-left">
+            <span class="hero-tag">Anatomía facial • Odontología • Estética</span>
+
+            <h2>
+                Plataforma visual para formación en estructuras faciales,
+                cavidad oral y procedimientos de estética médica
+            </h2>
+
+            <p>
+                Esta demo está pensada para presentar una plataforma educativa moderna,
+                orientada al estudio anatómico aplicado a odontología, armonización facial,
+                estética médica y procedimientos como toxina botulínica, rellenos y análisis estructural.
+                Combina visualización 2D, modelos 3D y navegación profesional tipo atlas clínico.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/estudio/" class="cta-btn primary">Entrar al módulo de estudio</a>
+                <a href="#servicios-demo" class="cta-btn secondary">Ver enfoque de la demo</a>
+            </div>
+
+            <div class="hero-metrics">
+                <div class="metric-card">
+                    <strong>32</strong>
+                    <span>Piezas dentales con numeración FDI y navegación interactiva</span>
+                </div>
+
+                <div class="metric-card">
+                    <strong>2D + 3D</strong>
+                    <span>Atlas odontológico y visualización anatómica inmersiva</span>
+                </div>
+
+                <div class="metric-card">
+                    <strong>Estética facial</strong>
+                    <span>Base para contenidos de botox, rellenos y armonización</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-right">
+            <div class="main-visual">
+                <div class="visual-header">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="visual-body">
+                    <img src="{% static 'anatomia/img/estetica_facial.jpg' %}" alt="Estética facial">
+
+                    <div class="overlay-card overlay-top">
+                        <span class="mini-badge">Demo clínica</span>
+                        <h3>Estudio visual del rostro</h3>
+                        <p>Zonas anatómicas, estructuras faciales y referencia para procedimientos estéticos.</p>
+                    </div>
+
+                    <div class="overlay-card overlay-bottom">
+                        <h4>Aplicaciones posibles</h4>
+                        <ul>
+                            <li>Botox por zonas anatómicas</li>
+                            <li>Armonización facial</li>
+                            <li>Atlas dental y oral</li>
+                            <li>Modo estudio y evaluación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="services-section" id="servicios-demo">
+        <div class="section-title">
+            <h3>Enfoque de la demo</h3>
+            <p>Presentación visual orientada a odontología y estética facial</p>
+        </div>
+
+        <div class="services-grid">
+            <article class="service-card">
+                <div class="service-icon">💉</div>
+                <h4>Botox por regiones faciales</h4>
+                <p>
+                    La plataforma puede evolucionar para mostrar músculos, puntos anatómicos
+                    y zonas clínicas de aplicación en procedimientos estéticos.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">✨</div>
+                <h4>Armonización facial</h4>
+                <p>
+                    Ideal para explicar proporciones faciales, análisis por áreas
+                    y referencia estructural para tratamientos mínimamente invasivos.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🦷</div>
+                <h4>Odontología interactiva</h4>
+                <p>
+                    Incluye odontograma digital, identificación por numeración FDI
+                    y base para vincular piezas dentales con modelos 3D.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🧠</div>
+                <h4>Aprendizaje guiado</h4>
+                <p>
+                    Puede integrarse con lecciones, exámenes, paneles explicativos
+                    y seguimiento del progreso del estudiante.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="showcase-section">
+        <div class="section-title">
+            <h3>Qué transmite esta demo al cliente</h3>
+            <p>Una experiencia visual más premium y médica</p>
+        </div>
+
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <span class="showcase-step">01</span>
+                <h4>Imagen profesional</h4>
+                <p>
+                    Interfaz limpia, moderna y alineada con una estética clínica,
+                    odontológica y de medicina estética.
+                </p>
+            </div>
+
+            <div class="showcase-card">
+                <span class="showcase-step">02</span>
+                <h4>Valor educativo</h4>
+                <p>
+                    El contenido puede organizarse para estudiantes, pacientes,
+                    profesionales o capacitaciones internas.
+                </p>
+            </div>
+
+            <div class="showcase-card">
+                <span class="showcase-step">03</span>
+                <h4>Escalabilidad</h4>
+                <p>
+                    Se puede ampliar con anatomía por capas, zonas de inyección,
+                    simulaciones, progreso y módulos avanzados.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="cta-final-card">
+            <div>
+                <span class="cta-final-tag">Siguiente paso</span>
+                <h3>Ingresar al módulo interactivo</h3>
+                <p>
+                    Accedé al mapa dental, modos 2D y 3D, y la base del sistema de evaluación visual.
+                </p>
+            </div>
+
+            <a href="/estudio/" class="cta-btn primary">Abrir módulo de estudio</a>
+        </div>
+    </section>
+</body>
+</html>
