@@ -1,0 +1,354 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudio | Atlas Anatómico Estético</title>
+    <link rel="stylesheet" href="{% static 'anatomia/css/estudio.css' %}" />
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand-wrap">
+                <a href="/" class="brand-mark">A</a>
+                <div class="brand-copy">
+                    <h1>Atlas Anatómico Estético</h1>
+                    <p>Odontología, anatomía facial y armonización</p>
+                </div>
+            </div>
+
+            <nav class="top-actions">
+                <a href="/" class="ghost-btn">Inicio</a>
+                <a href="/quiz/" class="ghost-btn">Quiz</a>
+                <a href="/login/" class="primary-btn">Acceso</a>
+            </nav>
+        </header>
+
+        <section class="hero-card">
+            <div class="hero-copy">
+                <span class="eyebrow">Demo premium</span>
+                <h2>Una experiencia visual pensada para impacto comercial</h2>
+                <p>
+                    Odontología, anatomía y medicina estética integradas en una sola demo
+                    visual, elegante y lista para presentar a clínicas, academias o universidades.
+                </p>
+            </div>
+            <div class="hero-badge">
+                <span>Med Spa</span>
+                <span>Facial</span>
+                <span>Odontología</span>
+            </div>
+        </section>
+
+        <section class="toolbar-card">
+            <div class="mode-tabs">
+                <button class="mode-btn active" data-mode="odontologia">Odontología</button>
+                <button class="mode-btn" data-mode="facial">Facial estética</button>
+                <button class="mode-btn" data-mode="craneo3d">Cráneo 3D</button>
+                <button class="mode-btn" data-mode="boca3d">Boca 3D</button>
+                <button class="mode-btn" data-mode="examen">Modo examen</button>
+            </div>
+
+            <div class="quick-tools">
+                <div class="search-wrap">
+                    <label for="fdi-search">Buscar FDI</label>
+                    <input type="text" id="fdi-search" placeholder="Ej: 11, 26, 37..." maxlength="2" />
+                    <button id="fdi-search-btn" class="small-btn">Ir</button>
+                </div>
+
+                <div class="nav-wrap">
+                    <button id="prev-tooth-btn" class="small-btn">Anterior</button>
+                    <button id="next-tooth-btn" class="small-btn">Siguiente</button>
+                </div>
+
+                <div class="filter-wrap">
+                    <label for="quadrant-filter">Cuadrante</label>
+                    <select id="quadrant-filter">
+                        <option value="all">Todos</option>
+                        <option value="1">1 - Superior derecho</option>
+                        <option value="2">2 - Superior izquierdo</option>
+                        <option value="3">3 - Inferior izquierdo</option>
+                        <option value="4">4 - Inferior derecho</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <main class="study-layout">
+            <section class="study-main">
+
+                <!-- ODONTOLOGÍA -->
+                <div class="mode-panel active" data-panel="odontologia">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-kicker">Módulo clínico</span>
+                            <h3>Odontograma + boca clínica + vista anatómica</h3>
+                        </div>
+                    </div>
+
+                    <div class="odontology-grid">
+                        <article class="glass-card">
+                            <div class="card-top">
+                                <h4>Odontograma FDI</h4>
+                                <p>Seleccioná una pieza para ver su referencia clínica.</p>
+                            </div>
+                            <div class="odontogram">
+                                <div class="teeth-row" id="top-row"></div>
+                                <div class="teeth-row teeth-row-bottom" id="bottom-row"></div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card">
+                            <div class="card-top">
+                                <h4>Vista clínica de boca</h4>
+                                <p>Relación visual simple entre pieza y arco.</p>
+                            </div>
+                            <div class="mouth-view">
+                                <div class="mouth-arch upper" id="mouth-upper"></div>
+                                <div class="mouth-arch lower" id="mouth-lower"></div>
+                            </div>
+                        </article>
+
+                        <article class="glass-card wide-card">
+                            <div class="card-top">
+                                <h4>Vista anatómica SVG</h4>
+                                <p>Mapa anatómico sincronizado.</p>
+                            </div>
+                            <div class="svg-mouth-wrap">
+                                <svg id="svg-mouth" viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="gumTop" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#f7d8e2"/>
+                                            <stop offset="100%" stop-color="#e6b9c9"/>
+                                        </linearGradient>
+                                        <linearGradient id="gumBottom" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#e6b9c9"/>
+                                            <stop offset="100%" stop-color="#f7d8e2"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <path d="M120 120 C240 30, 720 30, 840 120 L840 165 L120 165 Z" fill="url(#gumTop)" opacity="0.9"/>
+                                    <path d="M120 300 C240 390, 720 390, 840 300 L840 255 L120 255 Z" fill="url(#gumBottom)" opacity="0.9"/>
+
+                                    <g id="svg-upper-teeth"></g>
+                                    <g id="svg-lower-teeth"></g>
+                                </svg>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- FACIAL ESTÉTICA -->
+                <div class="mode-panel" data-panel="facial">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-kicker">Nuevo módulo premium</span>
+                            <h3>Mapa facial comercial con zonas de aplicación estética</h3>
+                        </div>
+                    </div>
+
+                    <div class="glass-card facial-commercial-card">
+                        <div class="facial-commercial-stage">
+                            <div class="face-scene">
+
+                                <!-- IZQUIERDA -->
+                                <button class="face-callout left c1" data-zone-target="frente" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Frente</span>
+                                </button>
+
+                                <button class="face-callout left c2" data-zone-target="glabela" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Glabela</span>
+                                </button>
+
+                                <button class="face-callout left c3" data-zone-target="patas_gallo" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Patas de gallo</span>
+                                </button>
+
+                                <button class="face-callout left c4" data-zone-target="surco_nasogeniano" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Surco nasogeniano</span>
+                                </button>
+
+                                <button class="face-callout left c5" data-zone-target="menton" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Mentón</span>
+                                </button>
+
+                                <!-- ROSTRO CON FOTO REAL -->
+                                <div class="face-portrait">
+                                    <img src="{% static 'anatomia/img/face.jpg' %}" alt="Rostro facial" class="face-img">
+
+                                    <svg id="face-svg" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa facial">
+                                        <g class="face-zones">
+                                            <ellipse class="face-zone" data-zone="frente" cx="350" cy="180" rx="120" ry="55"/>
+                                            <ellipse class="face-zone" data-zone="glabela" cx="350" cy="245" rx="30" ry="20"/>
+
+                                            <ellipse class="face-zone" data-zone="patas_gallo" cx="210" cy="300" rx="40" ry="30"/>
+                                            <ellipse class="face-zone" data-zone="patas_gallo" cx="490" cy="300" rx="40" ry="30"/>
+
+                                            <path class="face-zone" data-zone="nariz"
+                                                  d="M350 300 C330 380, 330 430, 350 480 C370 430, 370 380, 350 300 Z"/>
+
+                                            <path class="face-zone zone-stroke" data-zone="surco_nasogeniano"
+                                                  d="M300 420 C260 470, 250 520, 280 580"/>
+
+                                            <path class="face-zone zone-stroke" data-zone="surco_nasogeniano"
+                                                  d="M400 420 C440 470, 450 520, 420 580"/>
+
+                                            <ellipse class="face-zone" data-zone="labios" cx="350" cy="540" rx="85" ry="30"/>
+
+                                            <ellipse class="face-zone" data-zone="menton" cx="350" cy="620" rx="70" ry="40"/>
+
+                                            <ellipse class="face-zone" data-zone="maseteros" cx="230" cy="520" rx="55" ry="80"/>
+                                            <ellipse class="face-zone" data-zone="maseteros" cx="470" cy="520" rx="55" ry="80"/>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <!-- DERECHA -->
+                                <button class="face-callout right c1" data-zone-target="nariz" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Nariz</span>
+                                </button>
+
+                                <button class="face-callout right c2" data-zone-target="labios" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Labios</span>
+                                </button>
+
+                                <button class="face-callout right c3" data-zone-target="maseteros" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Maseteros</span>
+                                </button>
+
+                                <button class="face-callout right c4" data-zone-target="surco_nasogeniano" type="button">
+                                    <span class="callout-dot"></span>
+                                    <span class="callout-line"></span>
+                                    <span class="callout-pill">Surco</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CRÁNEO 3D -->
+                <div class="mode-panel" data-panel="craneo3d">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-kicker">Modelo 3D</span>
+                            <h3>Cráneo anatómico</h3>
+                        </div>
+                    </div>
+
+                    <div class="glass-card sketchfab-card">
+                        <div class="embed-wrap">
+                            <iframe
+                                title="Cráneo 3D"
+                                frameborder="0"
+                                allowfullscreen
+                                mozallowfullscreen="true"
+                                webkitallowfullscreen="true"
+                                allow="autoplay; fullscreen; xr-spatial-tracking"
+                                xr-spatial-tracking
+                                execution-while-out-of-viewport
+                                execution-while-not-rendered
+                                web-share
+                                src="https://sketchfab.com/models/252887e2e755427c90d9e3d0c6d3025f/embed">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOCA 3D -->
+                <div class="mode-panel" data-panel="boca3d">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-kicker">Modelo 3D</span>
+                            <h3>Boca fotorealista</h3>
+                        </div>
+                    </div>
+
+                    <div class="glass-card sketchfab-card">
+                        <div class="embed-wrap">
+                            <iframe
+                                title="Boca 3D"
+                                frameborder="0"
+                                allowfullscreen
+                                mozallowfullscreen="true"
+                                webkitallowfullscreen="true"
+                                allow="autoplay; fullscreen; xr-spatial-tracking"
+                                xr-spatial-tracking
+                                execution-while-out-of-viewport
+                                execution-while-not-rendered
+                                web-share
+                                src="https://sketchfab.com/models/d92cfd5873ac43299c7b64cdf9725526/embed">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EXAMEN -->
+                <div class="mode-panel" data-panel="examen">
+                    <div class="panel-header">
+                        <div>
+                            <span class="section-kicker">Práctica</span>
+                            <h3>Modo examen</h3>
+                        </div>
+                    </div>
+
+                    <div class="glass-card exam-card">
+                        <p class="exam-label">Pregunta</p>
+                        <h4 id="exam-question">Presioná “Nueva pregunta”.</h4>
+                        <div class="exam-answer-box" id="exam-answer">La respuesta aparecerá acá.</div>
+
+                        <div class="exam-actions">
+                            <button id="new-question-btn" class="primary-btn" type="button">Nueva pregunta</button>
+                            <button id="show-answer-btn" class="ghost-btn" type="button">Mostrar respuesta</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="info-sidebar">
+                <article class="info-card">
+                    <span class="section-kicker">Panel informativo</span>
+                    <h3 id="info-title">Seleccioná una estructura</h3>
+                    <h4 id="info-subtitle">Odontología · Anatomía · Estética</h4>
+                    <p id="info-description">
+                        Tocá una pieza dental o una zona facial para ver información clínica y estética.
+                    </p>
+                    <div class="info-tags" id="info-tags">
+                        <span>Interactivo</span>
+                        <span>Premium</span>
+                        <span>Demo comercial</span>
+                    </div>
+                </article>
+
+                <article class="tip-card">
+                    <span class="section-kicker">Enfoque comercial</span>
+                    <p>
+                        Esta vista está pensada para impactar visualmente en presentaciones de medicina estética,
+                        armonización facial, odontología estética y formación privada.
+                    </p>
+                </article>
+            </aside>
+        </main>
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="{% static 'anatomia/js/estudio.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Atlas Anatómico Estético</title>
+    <link rel="stylesheet" href="{% static 'anatomia/css/inicio.css' %}">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-mark">A</div>
+            <div class="brand-text">
+                <h1>Atlas Anatómico Estético</h1>
+                <p>Plataforma visual para medicina estética, odontología y formación profesional</p>
+            </div>
+        </div>
+
+        <nav class="top-actions">
+            <a href="/" class="nav-btn active">Inicio</a>
+            <a href="/estudio/" class="nav-btn">Plataforma</a>
+            <a href="/quiz/" class="nav-btn">Evaluación</a>
+            <a href="/login/" class="nav-btn nav-btn-outline">Acceso</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Medicina estética • Odontología • Cursos privados • Universidades</span>
+
+                <h2>
+                    Anatomía facial interactiva para profesionales que enseñan, aprenden y aplican estética médica
+                </h2>
+
+                <p class="hero-text">
+                    Una demo pensada para presentar una plataforma moderna de estudio anatómico, orientada a
+                    armonización facial, cavidad oral, análisis estructural y formación profesional en contextos
+                    privados, institucionales y universitarios.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/estudio/" class="cta-btn primary">Entrar a la plataforma</a>
+                    <a href="#accesos" class="cta-btn secondary">Ver accesos rápidos</a>
+                </div>
+
+                <div class="hero-mini-info">
+                    <div class="mini-info-card">
+                        <strong>Uso profesional</strong>
+                        <span>Ideal para cursos pagos, capacitación privada y docencia universitaria.</span>
+                    </div>
+                    <div class="mini-info-card">
+                        <strong>Visual y práctico</strong>
+                        <span>Menos lectura, más exploración por módulos, zonas y modelos anatómicos.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-card">
+                    <img src="{% static 'anatomia/img/estetica_facial.jpg' %}" alt="Anatomía facial aplicada a estética médica">
+
+                    <div class="floating-card floating-top">
+                        <span class="floating-tag">Enfoque premium</span>
+                        <h3>Primera impresión clínica y elegante</h3>
+                        <p>La experiencia visual comunica profesionalismo, armonización facial y formación de alto nivel.</p>
+                    </div>
+
+                    <div class="floating-card floating-bottom">
+                        <h4>Aplicaciones posibles</h4>
+                        <ul>
+                            <li>Botox por zonas faciales</li>
+                            <li>Rellenos y armonización</li>
+                            <li>Anatomía oral y odontológica</li>
+                            <li>Lecciones y evaluación guiada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-access" id="accesos">
+            <div class="section-heading center">
+                <span class="section-kicker">Acceso rápido</span>
+                <h3>Entrá a lo importante sin leer de más</h3>
+                <p>La demo debe entenderse en segundos: ver, explorar y evaluar.</p>
+            </div>
+
+            <div class="quick-grid">
+                <a href="/estudio/" class="quick-card quick-card-large">
+                    <div class="quick-icon">🧠</div>
+                    <div class="quick-content">
+                        <h4>Atlas facial 2D</h4>
+                        <p>Zonas anatómicas para exploración visual aplicada a medicina estética.</p>
+                        <span class="quick-link">Abrir módulo</span>
+                    </div>
+                </a>
+
+                <a href="/estudio/" class="quick-card">
+                    <div class="quick-icon">💀</div>
+                    <div class="quick-content">
+                        <h4>Cráneo 3D</h4>
+                        <p>Modelo anatómico inmersivo para referencia ósea y estructural.</p>
+                        <span class="quick-link">Ver modelo</span>
+                    </div>
+                </a>
+
+                <a href="/estudio/" class="quick-card">
+                    <div class="quick-icon">👄</div>
+                    <div class="quick-content">
+                        <h4>Boca 3D</h4>
+                        <p>Visualización oral para odontología, labios y cavidad bucal.</p>
+                        <span class="quick-link">Explorar</span>
+                    </div>
+                </a>
+
+                <a href="/quiz/" class="quick-card">
+                    <div class="quick-icon">📝</div>
+                    <div class="quick-content">
+                        <h4>Evaluación</h4>
+                        <p>Modo de práctica y repaso para cursos, workshops o formación guiada.</p>
+                        <span class="quick-link">Comenzar</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="audience-section">
+            <div class="section-heading">
+                <span class="section-kicker">Público objetivo</span>
+                <h3>La plataforma no es solo para estudiantes</h3>
+                <p>Está pensada para formación profesional y entornos reales de enseñanza.</p>
+            </div>
+
+            <div class="audience-grid">
+                <article class="audience-card">
+                    <div class="audience-number">01</div>
+                    <h4>Odontólogos y profesionales</h4>
+                    <p>Acceden a contenidos anatómicos como soporte para perfeccionamiento y práctica clínica.</p>
+                </article>
+
+                <article class="audience-card">
+                    <div class="audience-number">02</div>
+                    <h4>Cursos privados</h4>
+                    <p>Sirve como base visual para capacitaciones pagas, módulos premium y formación especializada.</p>
+                </article>
+
+                <article class="audience-card">
+                    <div class="audience-number">03</div>
+                    <h4>Universidades y docencia</h4>
+                    <p>Puede adaptarse a clases formales, demostraciones académicas y experiencias de enseñanza asistida.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="section-heading center">
+                <span class="section-kicker">Valor de la demo</span>
+                <h3>Qué le muestra esta propuesta al cliente</h3>
+                <p>Una plataforma con imagen premium, recorrido claro y potencial de crecimiento.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <article class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h4>Imagen de marca</h4>
+                    <p>Estética cuidada, sobria y profesional, más alineada a un med spa o instituto de formación avanzada.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h4>Base educativa</h4>
+                    <p>Permite organizar clases, lecciones, módulos visuales y experiencias de estudio con lógica profesional.</p>
+                </article>
+
+                <article class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h4>Escalable</h4>
+                    <p>Se puede ampliar con login, seguimiento, certificaciones, zonas de inyección y simulaciones clínicas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="final-cta-box">
+                <div class="final-cta-copy">
+                    <span class="section-kicker light">Siguiente paso</span>
+                    <h3>Entrar al módulo interactivo</h3>
+                    <p>
+                        Accedé al entorno principal para mostrar atlas, modelos 3D y evaluación.
+                        La home ahora vende mejor la idea; el siguiente paso es que la plataforma interna acompañe ese nivel visual.
+                    </p>
+                </div>
+
+                <div class="final-cta-actions">
+                    <a href="/estudio/" class="cta-btn light-btn">Abrir plataforma</a>
+                    <a href="/quiz/" class="cta-btn ghost-btn">Ir a evaluación</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
